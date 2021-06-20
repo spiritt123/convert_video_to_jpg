@@ -1,7 +1,8 @@
 import cv2
 import numpy as np
 print(cv2.__version__)
-vidcap = cv2.VideoCapture('1.mp4')
+name = input()
+vidcap = cv2.VideoCapture(name)
 success,image = vidcap.read()
 count = 0
 success = True
@@ -18,4 +19,4 @@ while success:
 output = output[::-1]
 for i in range(200, 360):
     output.append(buffer1[i])
-cv2.imwrite("./image.jpg", np.asarray(output))
+cv2.imwrite("./"+name[0:-4]+".jpg", np.asarray(output))
